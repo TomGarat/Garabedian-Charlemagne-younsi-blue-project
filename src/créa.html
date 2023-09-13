@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création de Personnage</title>
+    <link rel="stylesheet" href="../css/créa.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Créez votre personnage</h1>
+        
+        <form id="characterForm">
+            <div class="input-group">
+                <label for="characterName">Nom:</label>
+                <input type="text" id="characterName" name="characterName" required pattern="[A-Za-z]{3,16}" title="3 à 16 caractères alphabétiques uniquement.">
+            </div>
+
+            <div class="input-group">
+                <label for="characterClass">Classe:</label>
+                <select id="characterClass" name="characterClass">
+                    <option value="guerrier">Guerrier</option>
+                    <option value="mage">Mage</option>
+                    <option value="archer">Archer</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="startingItem">Choisissez un objet de départ:</label>
+                <select id="startingItem" name="startingItem">
+                    <option value="sword">Épée</option>
+                    <option value="shield">Bouclier</option>
+                    <option value="potion">Potion</option>
+                </select>
+            </div>
+
+            <h2>Questionnaire d'alignement</h2>
+
+            <div class="input-group">
+                <label>Préférez-vous l'attaque ou la défense?</label>
+                <select name="question1">
+                    <option value="10">Attaque (+10)</option>
+                    <option value="-10">Défense (-10)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Aidez-vous les nécessiteux?</label>
+                <select name="question2">
+                    <option value="10">Oui (+10)</option>
+                    <option value="-10">Non (-10)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Préférez-vous travailler seul ou en équipe?</label>
+                <select name="question3">
+                    <option value="-10">Seul (-10)</option>
+                    <option value="10">En équipe (+10)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="characterDescription">Description:</label>
+                <textarea id="characterDescription" name="characterDescription" rows="4"></textarea>
+            </div>
+            <a href="jeux.html"><button type="submit">Créer</button></a>
+        </form>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

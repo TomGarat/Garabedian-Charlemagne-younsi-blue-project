@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royaume de BLUE</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue dans le Royaume de BLUE</h1>
+        <button id="playButton">Jouer</button>
+    </div>
+
+    <script src="assets/js/game.js"></script>
+    <script>
+        document.getElementById('playButton').addEventListener('click', function() {
+            window.location.href = 'assets/html/créa.html';  // Rediriger vers la page principale du jeu
+        });
+    </script>
+</body>
+</html>

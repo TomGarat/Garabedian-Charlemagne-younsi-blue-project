@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royaume de BLUE - Jeu</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="player-info">
+        <h2 id="playerGold">Pièces d'or : 0</h2>
+    </div>
+    <div class="player-info">
+        <h2 id="playerQi">qi : 0</h2>
+    </div>
+
+    <div class="container">
+        <h1 id="eventTitle">Titre de l'événement</h1>
+        <p id="eventDescription">Description de l'événement</p>
+        <img id="eventImage" src="" alt="Image de l'événement" style="max-width: 300px;">
+        <div id="choicesContainer">
+            <button id="choice1">
+                Choix 1
+              </button>
+            <button id="choice2">
+                Choix 2
+              </button>
+        </div>
+    </div>
+
+    <script src="../js/game.js"></script>
+    <script>
+        // Définir la classe Player et les événements (comme mentionné précédemment)
+
+        const player = new Player("Nom du joueur");
+        updatePlayerGoldDisplay();
+        updatePlayerQiDisplay();
+
+        function updatePlayerGoldDisplay() {
+            const goldDisplay = document.getElementById('playerGold');
+            goldDisplay.textContent = `Pièces d'or : ${player.gold}`;
+        }
+
+        function updatePlayerQiDisplay() {
+            const qiDisplay = document.getElementById('playerQi');
+            qiDisplay.textContent = `qi : ${player.qi}`;
+        }
+
+        function displayRandomEvent() {
+            const currentEvent = events[Math.floor(Math.random() * events.length)];
+            
+            document.getElementById('eventTitle').textContent = currentEvent.title;
+            document.getElementById('eventDescription').textContent = currentEvent.description;
+            document.getElementById('eventImage').src = currentEvent.imageUrl;
+
+            // Mise à jour des boutons de choix avec les informations de l'événement actuel
+            const choice1Button = document.getElementById('choice1');
+            const choice2Button = document.getElementById('choice2');
+
+            choice1Button.textContent = currentEvent.choices[0].text;
+            choice2Button.textContent = currentEvent.choices[1].text;
+
+            // Attach event listeners
+            choice1Button.onclick = function() {
+                handleChoiceClickGold(currentEvent.choices[0]);
+                handleChoiceClickQi(currentEvent.choices[0]);
+            };
+            
+            choice2Button.onclick = function() {
+                handleChoiceClickGold(currentEvent.choices[1]);
+                handleChoiceClickQi(currentEvent.choices[1]);
+            };
+        }
+
+        function handleChoiceClickGold(choice) {
+            if (choice.goldChange > 0) {
+                player.addGold(choice.goldChange);                
+            } else {
+                player.substractGold(choice.goldChange);
+            }
+
+            // Gestion du Qi
+            if (choice.qi > 0) {
+                player.addQi(choice.qi);
+            } else {
+                player.substractQi(choice.qi);
+            }
+            
+            // Mise à jour de l'affichage pour l'or
+            updatePlayerGoldDisplay();
+
+            // Mise à jour de l'affichage pour l'qi
+            updatePlayerQiDisplay();
+            
+            // Afficher l'événement suivant
+            displayRandomEvent();
+        }
+
+        displayRandomEvent();  // Afficher le premier événement lors du chargement de la page
+    </script>
+</body>
+</html>
+        
