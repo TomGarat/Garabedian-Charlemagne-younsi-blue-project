@@ -1,18 +1,33 @@
 body {
     font-family: 'Arial', sans-serif;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: #cce7ff;
+    margin: 0;
+    padding: 20px;
+}
+
+.character-info, .player-info {
+    font-size: 1.1em;
+    background-color: #e6f0ff;
+    padding: 8px 15px; /* Espacement interne réduit */
+    margin: 10px 0; /* Espacement externe réduit */
+    border-radius: 8px;
+    width: 80%; /* Largeur réduite pour les centrer */
+    border: 1px solid #b5cfe9; /* Bordure plus fine */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.08); /* Ombre portée réduite */
+    text-align: center; 
+    max-width: 600px; /* Largeur maximale ajoutée pour de meilleures proportions */
+    margin-left: auto; /* Ces deux lignes centrent les conteneurs */
+    margin-right: auto;
 }
 
 .container {
     text-align: center;
-    padding: 50px;
+    padding: 30px; /* Réduction du padding */
     border-radius: 15px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.18);
     background-color: #ffffff;
+    max-width: 90%;
+    margin-top: 15px; 
 }
 
 h1 {
@@ -20,9 +35,11 @@ h1 {
     color: #0044cc;
 }
 
+
 button {
-    width: 150px;
-    height: 60px;
+    width: auto; /* Permet aux boutons de s'étendre en fonction de leur contenu */
+    padding: 12px 20px;
+    height: auto;  /* Permet au bouton de s'ajuster en hauteur */
     border: 3px solid #315cfd;
     border-radius: 45px;
     transition: all 0.3s;
@@ -31,16 +48,17 @@ button {
     font-size: 1.2em;
     font-weight: 550;
     font-family: 'Montserrat', sans-serif;
-  }
+    white-space: normal;  /* Le texte du bouton passe à la ligne si nécessaire */
+    word-wrap: break-word;  /* Casse les mots trop longs pour s'adapter à la largeur du bouton */
+}
 
-  button:hover {
+button:hover {
     background: #315cfd;
     color: white;
-    font-size: 1.5em;
-  }
+    transform: scale(1.05);  /* Légère augmentation de la taille au survol */
+}
 
-
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     h1 {
         font-size: 1.5em;
     }
@@ -48,6 +66,7 @@ button {
     button {
         font-size: 0.9em;
         padding: 8px 16px;
+        width: auto;  /* Pour permettre l'ajustement de la taille */
     }
 }
 

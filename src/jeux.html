@@ -27,7 +27,7 @@
     <div class="container">
         <h1 id="eventTitle">Titre de l'événement</h1>
         <p id="eventDescription">Description de l'événement</p>
-        <img id="eventImage" src="" alt="Image de l'événement" style="max-width: 300px;">
+        <!-- <img id="eventImage" src="" alt="Image de l'événement" style="max-width: 300px;"> -->
         <div id="choicesContainer">
             <button id="choice1">
                 Choix 1
@@ -76,7 +76,7 @@ if (storedCharacterData) {
             
             document.getElementById('eventTitle').textContent = currentEvent.title;
             document.getElementById('eventDescription').textContent = currentEvent.description;
-            document.getElementById('eventImage').src = currentEvent.imageUrl;
+            // document.getElementById('eventImage').src = currentEvent.imageUrl;
 
             // Mise à jour des boutons de choix avec les informations de l'événement actuel
             const choice1Button = document.getElementById('choice1');

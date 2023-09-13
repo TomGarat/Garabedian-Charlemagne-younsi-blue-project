@@ -21,98 +21,167 @@ class Player {
     substractQi(amount) {
         this.qi += amount;
     }
+    
 }
 
 const events = [
     {
-        title: "Titre événement 1",
-        description: "Description événement 1",
+        title: "Histoire",
+        description: "Quand a eu lieu la révolution française ?",
         imageUrl: "url1.jpg",
         choices: [
             {
-                text: "Choix 1",
+                text: "1689",
+                qi : -10,
+                goldChange: -5
+            },
+            {
+                text: "1789",
+                qi : 5,
+                goldChange: 3
+            }
+        ]
+    },
+
+    {
+        title: "Littérature",
+        description: "Qui a écrit Roméo et Juliette ?",
+        imageUrl: "url1.jpg",
+        choices: [
+            {
+                text: "Dickens",
+                qi : -10,
+                goldChange: -5
+            },
+            {
+                text: "Shakespeare",
+                qi : 5,
+                goldChange: 3
+            }
+            
+        ]
+    },
+
+    {
+        title: "Artistique",
+        description: "Qui a peint la Joconde ?",
+        imageUrl: "url1.jpg",
+        choices: [
+            {
+                text: "Vincent van Gogh",
+                qi : -10,
+                goldChange: -5
+            },
+            {
+                text: "Leonard de Vinci",
+                qi : 10,
+                goldChange: 8
+            }
+        ]
+    },
+
+    {
+        title: "Informatique",
+        description: "Que signifie AES ?",
+        imageUrl: "url1.jpg",
+        choices: [
+            {
+                text: "Advanced Encryption System",
                 qi : 10,
                 goldChange: 5
             },
             {
-                text: "Choix 2",
-                qi : -5,
+                text: "Achat Electonique Système",
+                qi : -10,
                 goldChange: -3
             }
         ]
     },
 
     {
-        title: "Titre événement 1",
-        description: "Description événement 1",
+        title: "Football",
+        description: "Combien de Champion's Ligue à gagner le Real Madrid",
         imageUrl: "url1.jpg",
         choices: [
             {
-                text: "Choix 1",
+                text: "14",
                 qi : 10,
                 goldChange: 5
             },
             {
-                text: "Choix 2",
+                text: "12",
                 qi : -5,
                 goldChange: -3
             }
         ]
     },
-
     {
-        title: "Titre événement 2",
-        description: "Description événement 2",
+        title: "Géographie",
+        description: "Quelle est la capitale de la France",
         imageUrl: "url1.jpg",
         choices: [
             {
-                text: "Choix 1",
+                text: "Paris",
                 qi : 10,
                 goldChange: 5
             },
             {
-                text: "Choix 2",
-                qi : -5,
-                goldChange: -3
+                text: "Lyon",
+                qi : -15,
+                goldChange: -20
             }
         ]
     },
-
     {
-        title: "Titre événement 3",
-        description: "Description événement 3",
+        title: "Culture",
+        description: "Ou se trouve le Colisée ?",
         imageUrl: "url1.jpg",
         choices: [
             {
-                text: "Choix 1",
+                text: "Rome",
                 qi : 10,
                 goldChange: 5
             },
             {
-                text: "Choix 2",
+                text: "Turin",
                 qi : -5,
-                goldChange: -3
+                goldChange: -20
             }
         ]
     },
-
     {
-        title: "Titre événement 4",
-        description: "Description événement 4",
+        title: "Musique",
+        description: "Qui est le pianiste parmi ces 2 personnes ?",
         imageUrl: "url1.jpg",
         choices: [
             {
-                text: "Choix 1",
+                text: "Carlsen",
+                qi : -10,
+                goldChange: -5
+            },
+            {
+                text: "Beethoven",
+                qi : 15,
+                goldChange: 20
+            }
+        ]
+    },
+    {
+        title: "Nourriture",
+        description: "Qui a inventé les frites ?",
+        imageUrl: "url1.jpg",
+        choices: [
+            {
+                text: "France",
                 qi : 10,
                 goldChange: 5
             },
             {
-                text: "Choix 2",
-                qi : -5,
-                goldChange: -3
+                text: "Belgique",
+                qi : -15,
+                goldChange: -20
             }
         ]
     },
-    // ... Ajoutez d'autres événements comme ci-dessus
 ];
 

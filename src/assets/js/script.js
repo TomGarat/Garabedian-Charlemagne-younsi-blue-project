@@ -1,5 +1,5 @@
 document.getElementById('characterForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Empêche le rechargement de la page
+    event.preventDefault();
 
     const characterNameRaw = document.getElementById('characterName').value;
     const formattedCharacterName = characterNameRaw.charAt(0).toUpperCase() + characterNameRaw.slice(1).toLowerCase();
@@ -12,13 +12,31 @@ document.getElementById('characterForm').addEventListener('submit', function(eve
     alignment += parseInt(document.querySelector('select[name="question2"]').value);
     alignment += parseInt(document.querySelector('select[name="question3"]').value);
 
-    console.log("Nom du personnage:", formattedCharacterName);
-    console.log("Classe du personnage:", characterClass);
-    console.log("Objet de départ:", startingItem);
-    console.log("Description:", characterDescription);
-    console.log("Alignement:", alignment);
+    let startingGold = 0;
 
-    function saveCharacter(event) {
-        
-    // Ici, vous pouvez ajouter du code pour sauvegarder le personnage ou prendre d'autres mesures.
-}})
+    switch (characterClass) {
+        case "riche":
+            startingGold = 100;
+            break;
+        case "moyen":
+            startingGold = 50;
+            break;
+        case "pauvre":
+            startingGold = 25;
+            break;
+    }
+
+    // Sauvegardez toutes les données nécessaires dans localStorage pour y accéder plus tard.
+    const characterData = {
+        name: formattedCharacterName,
+        class: characterClass,
+        item: startingItem,
+        description: characterDescription,
+        alignment: alignment,
+        gold: startingGold
+    };
+    localStorage.setItem('characterData', JSON.stringify(characterData));
+
+    // Redirection vers le jeu après la création du personnage (ajustez selon votre structure)
+    window.location.href = 'jeux.html';
+});
