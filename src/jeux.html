@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Royaume de BLUE - Jeu</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+
+    <div class="character-info">
+        <h2 id="characterNameDisplay">Nom: </h2>
+        <h3 id="characterClassDisplay">Classe Social: </h3>
+        <h3 id="characterItemDisplay">Objet de départ: </h3>
+        <h3 id="characterAlignmentDisplay">Alignement: </h3>
+        <p id="characterDescriptionDisplay">Description: </p>
+    </div>
+    
+
     <div class="player-info">
         <h2 id="playerGold">Pièces d'or : 0</h2>
     </div>
@@ -28,13 +38,28 @@
         </div>
     </div>
 
-    <script src="../js/game.js"></script>
+    <script src="assets/js/game.js"></script>
     <script>
         // Définir la classe Player et les événements (comme mentionné précédemment)
 
         const player = new Player("Nom du joueur");
         updatePlayerGoldDisplay();
         updatePlayerQiDisplay();
+
+        // Récupération des données du personnage depuis le local storage
+const storedCharacterData = JSON.parse(localStorage.getItem('characterData'));
+
+if (storedCharacterData) {
+    document.getElementById('characterNameDisplay').textContent += storedCharacterData.name;
+    document.getElementById('characterClassDisplay').textContent += storedCharacterData.class;
+    document.getElementById('characterItemDisplay').textContent += storedCharacterData.item;
+    document.getElementById('characterDescriptionDisplay').textContent = storedCharacterData.description;
+    document.getElementById('characterAlignmentDisplay').textContent += (storedCharacterData.alignment > 0 ? "+" : "") + storedCharacterData.alignment + " Qi";
+
+    player.addQi(storedCharacterData.alignment);  // Ajuste le Qi du joueur selon son alignement
+    updatePlayerQiDisplay();
+}
+
 
         function updatePlayerGoldDisplay() {
             const goldDisplay = document.getElementById('playerGold');

@@ -21,4 +21,4 @@ document.getElementById('characterForm').addEventListener('submit', function(eve
     function saveCharacter(event) {
         
     // Ici, vous pouvez ajouter du code pour sauvegarder le personnage ou prendre d'autres mesures.
-});
+}})
