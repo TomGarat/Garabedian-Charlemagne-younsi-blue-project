@@ -12,19 +12,6 @@ document.getElementById('characterForm').addEventListener('submit', function(eve
     alignment += parseInt(document.querySelector('select[name="question2"]').value);
     alignment += parseInt(document.querySelector('select[name="question3"]').value);
 
-    let startingGold = 0;
-
-    switch (characterClass) {
-        case "riche":
-            startingGold = 100;
-            break;
-        case "moyen":
-            startingGold = 50;
-            break;
-        case "pauvre":
-            startingGold = 25;
-            break;
-    }
 
     // Sauvegardez toutes les données nécessaires dans localStorage pour y accéder plus tard.
     const characterData = {

@@ -21,7 +21,6 @@ class Player {
     substractQi(amount) {
         this.qi += amount;
     }
-    
 }
 
 const events = [
