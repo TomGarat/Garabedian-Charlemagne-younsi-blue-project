@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Résultat Final</title>
     <link rel="stylesheet" href="assets/css/final.css">
+    <link rel="icon" href="assets/img/quiz-icon-blue-removebg-preview.png" type="image/png">
+
 </head>
 <body>
     <div class="container">
@@ -23,17 +25,17 @@
 
         let intelligenceDescription = "";
         if(playerQi <= -20) intelligenceDescription = "très faible intelligence";
-        else if(playerQi <= 0) intelligenceDescription = "intelligence faible";
-        else if(playerQi <= 20) intelligenceDescription = "intelligence moyenne";
-        else if(playerQi >= 30) intelligenceDescription = "haute intelligence";
-        else if(playerQi >= 50) intelligenceDescription = "très haute intelligence";
+        else if(playerQi <= 20) intelligenceDescription = "intelligence faible";
+        else if(playerQi <= 80) intelligenceDescription = "intelligence moyenne";
+        else if(playerQi <= 120) intelligenceDescription = "haute intelligence";
+        else if(playerQi <= 150) intelligenceDescription = "très haute intelligence";
 
         let wealthDescription = "";
-        if(playerGold <= 10) wealthDescription = "endetté";
-        else if(playerGold <= 20) wealthDescription = "pauvre";
+        if(playerGold <= -20) wealthDescription = "endetté";
+        else if(playerGold <= 15) wealthDescription = "pauvre";
         else if(playerGold <= 30) wealthDescription = "moyen";
-        else if(playerGold >= 50) wealthDescription = "riche";
-        else if(playerGold >= 100) wealthDescription = "très riche";
+        else if(playerGold <= 75) wealthDescription = "riche";
+        else if(playerGold <= 115) wealthDescription = "très riche";
 
         document.getElementById("finalResult").textContent = `${playerName}, avec un Qi de ${playerQi} démontre une ${intelligenceDescription}. Ayant ${playerGold} pièces d'or, il est considéré comme ${wealthDescription}.`;
 
