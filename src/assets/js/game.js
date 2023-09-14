@@ -85,7 +85,7 @@ const events = [
         imageUrl: "url1.jpg",
         choices: [
             {
-                text: "Advanced Encryption System",
+                text: "Advanced Encryption Standard",
                 qi : 10,
                 goldChange: 5
             },
