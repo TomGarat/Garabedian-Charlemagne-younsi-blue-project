@@ -1,62 +1,55 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #cce7ff;
     margin: 0;
-    padding: 20px;
-}
-
-.character-info, .player-info {
-    font-size: 1.1em;
-    background-color: #e6f0ff;
-    padding: 8px 15px; /* Espacement interne réduit */
-    margin: 10px 0; /* Espacement externe réduit */
-    border-radius: 8px;
-    width: 80%; /* Largeur réduite pour les centrer */
-    border: 1px solid #b5cfe9; /* Bordure plus fine */
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.08); /* Ombre portée réduite */
-    text-align: center; 
-    max-width: 600px; /* Largeur maximale ajoutée pour de meilleures proportions */
-    margin-left: auto; /* Ces deux lignes centrent les conteneurs */
-    margin-right: auto;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #cce7ff; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
     text-align: center;
-    padding: 30px; /* Réduction du padding */
+    padding: 30px;
     border-radius: 15px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.18);
     background-color: #ffffff;
-    max-width: 90%;
-    margin-top: 15px; 
+    width: 80%;
+    max-width: 600px;
 }
 
 h1 {
     margin-bottom: 20px;
     color: #0044cc;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-
 button {
-    width: auto; /* Permet aux boutons de s'étendre en fonction de leur contenu */
-    padding: 12px 20px;
-    height: auto;  /* Permet au bouton de s'ajuster en hauteur */
-    border: 3px solid #315cfd;
+    width: auto;
+    padding: 12px 24px;
+    border: none;
     border-radius: 45px;
     transition: all 0.3s;
     cursor: pointer;
-    background: white;
+    background: #315cfd;
+    color: white;
     font-size: 1.2em;
     font-weight: 550;
     font-family: 'Montserrat', sans-serif;
-    white-space: normal;  /* Le texte du bouton passe à la ligne si nécessaire */
-    word-wrap: break-word;  /* Casse les mots trop longs pour s'adapter à la largeur du bouton */
+    outline: none;
 }
 
 button:hover {
-    background: #315cfd;
-    color: white;
-    transform: scale(1.05);  /* Légère augmentation de la taille au survol */
+    background: #0044cc;
+    transform: scale(1.05);
 }
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Responsiveness */
 
 @media (max-width: 768px) {
     h1 {
@@ -64,9 +57,8 @@ button:hover {
     }
 
     button {
-        font-size: 0.9em;
-        padding: 8px 16px;
-        width: auto;  /* Pour permettre l'ajustement de la taille */
+        font-size: 1em;
+        padding: 10px 20px;
     }
 }
 
@@ -76,7 +68,7 @@ button:hover {
     }
 
     button {
-        font-size: 0.8em;
-        padding: 6px 12px;
+        font-size: 0.9em;
+        padding: 8px 16px;
     }
 }

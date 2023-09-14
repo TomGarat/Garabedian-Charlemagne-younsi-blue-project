@@ -31,13 +31,13 @@ const events = [
         choices: [
             {
                 text: "1689",
-                qi : -10,
+                qi : -20,
                 goldChange: -5
             },
             {
                 text: "1789",
-                qi : 5,
-                goldChange: 3
+                qi : 10,
+                goldChange: 10
             }
         ]
     },
@@ -68,12 +68,12 @@ const events = [
         choices: [
             {
                 text: "Vincent van Gogh",
-                qi : -10,
-                goldChange: -5
+                qi : -30,
+                goldChange: -10
             },
             {
                 text: "Leonard de Vinci",
-                qi : 10,
+                qi : 30,
                 goldChange: 8
             }
         ]
@@ -91,8 +91,8 @@ const events = [
             },
             {
                 text: "Achat Electonique Système",
-                qi : -10,
-                goldChange: -3
+                qi : -20,
+                goldChange: -7
             }
         ]
     },
@@ -126,7 +126,7 @@ const events = [
             },
             {
                 text: "Lyon",
-                qi : -15,
+                qi : -30,
                 goldChange: -20
             }
         ]

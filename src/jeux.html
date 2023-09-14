@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Royaume de BLUE - Jeu</title>
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/jeux.css" />
   </head>
   <body>
     <div class="character-info">
@@ -42,7 +42,6 @@
       // Pour suivre le nombre d'événements affichés
       let eventCount = 0;
 
-      // Récupération des données du personnage depuis le local storage
       // Récupération des données du personnage depuis le local storage
       const storedCharacterData = JSON.parse(
         localStorage.getItem("characterData")
@@ -102,13 +101,11 @@
         const currentEvent = getRandomEvent();
 
         if (currentEvent === null) {
-          document.getElementById("eventTitle").textContent = "Fin du jeu!";
-          document.getElementById("eventDescription").textContent =
-            "Merci d'avoir joué!";
-          document.getElementById("choice1").style.display = "none";
-          document.getElementById("choice2").style.display = "none";
+        localStorage.setItem('playerData', JSON.stringify(player)); // Sauvegardez les données du joueur
+        window.location.href = 'final.html'; // Redirection vers la page finale
           return;
-        }
+}
+
 
         document.getElementById("eventTitle").textContent = currentEvent.title;
         document.getElementById("eventDescription").textContent =
