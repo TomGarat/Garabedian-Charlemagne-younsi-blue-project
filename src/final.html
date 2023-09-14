@@ -15,21 +15,25 @@
     
 
     <script>
-        const playerName = JSON.parse(localStorage.getItem("characterData")).name;
-        const playerQi = parseInt(localStorage.getItem("playerData")).qi;
-        const playerGold = parseInt(localStorage.getItem("playerData")).gold;
+       const playerData = JSON.parse(localStorage.getItem("playerData"));
+        const characterData = JSON.parse(localStorage.getItem("characterData"));
+        const playerName = characterData.name;
+        const playerQi = playerData.qi;
+        const playerGold = playerData.gold;
 
         let intelligenceDescription = "";
         if(playerQi <= -20) intelligenceDescription = "très faible intelligence";
         else if(playerQi <= 0) intelligenceDescription = "intelligence faible";
         else if(playerQi <= 20) intelligenceDescription = "intelligence moyenne";
         else if(playerQi <= 30) intelligenceDescription = "haute intelligence";
+        else if(playerQi >= 50) intelligenceDescription = "très haute intelligence";
 
         let wealthDescription = "";
         if(playerGold <= 10) wealthDescription = "très pauvre";
         else if(playerGold <= 20) wealthDescription = "pauvre";
         else if(playerGold <= 30) wealthDescription = "moyen";
-        else if(playerGold <= 50) wealthDescription = "riche";
+        else if(playerGold >= 50) wealthDescription = "riche";
+        else if(playerGold >= 100) wealthDescription = "très riche";
 
         document.getElementById("finalResult").textContent = `${playerName}, avec un Qi de ${playerQi} démontre une ${intelligenceDescription}. Ayant ${playerGold} pièces d'or, il est considéré comme ${wealthDescription}.`;
 
