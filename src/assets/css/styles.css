@@ -1,14 +1,15 @@
 body {
+    body {
     font-family: 'Arial', sans-serif;
-    height: 100vh;
+    background-color: #cce7ff;
+    margin: 0;
+    padding: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-   
-    background-image: url('../img/pngtree-gritty-neon-light-background-in-an-empty-room-3d-rendered-concept-image_3733448.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: 100vh;
+}
 }
 
 .container {
