@@ -23,6 +23,19 @@ class Player {
     }
 }
 
+window.addEventListener("DOMContentLoaded", function () {
+    const numStars = 50; // Nombre d'étoiles que vous voulez
+
+    for (let i = 0; i < numStars; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        star.style.left = Math.random() * 100 + "vw"; // Position horizontale aléatoire
+        star.style.animationDuration = Math.random() * 2 + 3 + "s"; // Durée de l'animation aléatoire
+        document.body.appendChild(star);
+    }
+});
+
+
 const events = [
     {
         title: "Histoire",
@@ -85,7 +98,7 @@ const events = [
         imageUrl: "url1.jpg",
         choices: [
             {
-                text: "Advanced Encryption Standard",
+                text: "Advanced Encryption System",
                 qi : 10,
                 goldChange: 5
             },
@@ -183,4 +196,3 @@ const events = [
         ]
     },
 ];
-

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création de Personnage</title>
+    <link rel="stylesheet" href="assets/css/créa.css">
+    <link rel="icon" href="assets/img/quiz-icon-blue-removebg-preview.jpg" type="image/jpg">
+</head>
+<body>
+    <div class="container">
+        <h1>Créez votre personnage</h1>
+        
+        <form id="characterForm">
+            <div class="input-group">
+                <label for="characterName">Nom:</label>
+                <input type="text" id="characterName" name="characterName" required pattern="[A-Za-z]{3,16}" title="3 à 16 caractères alphabétiques uniquement.">
+            </div>
+
+            <div class="input-group">
+                <label for="characterClass">Classe Social:</label>
+                <select id="characterClass" name="characterClass">
+                    <option value="pauvre">Pauvre</option>
+                    <option value="moyen">Moyen</option>
+                    <option value="riche">Riche</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="startingItem">Choisissez un objet de départ:</label>
+                <select id="startingItem" name="startingItem">
+                    <option value="indice">Indice</option>
+                    <option value="redbull">RedBull</option>
+                    <option value="jokers">Jokers</option>
+                </select>
+            </div>
+
+            <h2>Questionnaire d'alignement</h2>
+
+            <div class="input-group">
+                <label>Préférez-vous Ethan ou Alan ?</label>
+                <select name="question1">
+                    <option value="+10">Ethan </option>
+                    <option value="-10">Alan </option>
+                    <option value="+20">Les Deux </option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Aidez-vous les nécessiteux?</label>
+                <select name="question2">
+                    <option value="10">Oui </option>
+                    <option value="-10">Non </option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Préférez-vous travailler seul ou en équipe?</label>
+                <select name="question3">
+                    <option value="-10">Seul </option>
+                    <option value="10">En équipe </option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="characterDescription">Description:</label>
+                <textarea id="characterDescription" name="characterDescription" rows="4"></textarea>
+            </div>
+            <button type="submit" id="creabutton">Créer</button>
+        </form>
+    </div>
+
+    <script src="assets/js/game.js"></script>
+    <script>
+        document.getElementById('characterForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Empêche le rechargement de la page
+
+    const characterData = {
+        name: document.getElementById('characterName').value.charAt(0).toUpperCase() + document.getElementById('characterName').value.slice(1).toLowerCase(),
+        class: document.getElementById('characterClass').value,
+        item: document.getElementById('startingItem').value,
+        description: document.getElementById('characterDescription').value,
+        alignment: parseInt(document.querySelector('select[name="question1"]').value) + parseInt(document.querySelector('select[name="question2"]').value) + parseInt(document.querySelector('select[name="question3"]').value)
+    };
+
+    // Sauvegarde des données du personnage dans le local storage
+    localStorage.setItem('characterData', JSON.stringify(characterData));
+
+    // Redirection vers la page jeux.html
+    window.location.href = 'jeux.html';
+});
+
+    </script>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

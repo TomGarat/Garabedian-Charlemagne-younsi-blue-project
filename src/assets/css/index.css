@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('../img/19629-scaled.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#playButton {
+    color: #0ee3e7;
+}
+
+#playButton:hover {
+    background: #03d1f6;
+    color: white;
+    transform: scale(1.05);  /* Légère augmentation de la taille au survol */
+}
+
+button {
+    width: auto;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 45px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background: #ffffff;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 550;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+
+
+.container {
+    /* Vos styles pour le .container ici */
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.18);
+    background-color: #ffffff00;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative; /* Position relative pour positionner les éléments fils */
+}
+
+.container:hover{
+    opacity: 0,2;
+}
+
+h1{
+    color: #03d1f6;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+        
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2em;
+    }
+
+    button {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+}
+
+/* Ajoutez ces styles pour l'animation de fond */
+body {
+    background-color: #0ee3e7;
+    overflow: hidden; /* Pour cacher les éléments en dehors du viewport */
+}
+
+.star {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: gold;
+    border-radius: 50%;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
